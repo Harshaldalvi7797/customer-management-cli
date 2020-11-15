@@ -59,8 +59,8 @@ const listCustomer = () => {
   Customer.find().then(customer => {
     console.info(customer);
     console.info(`${customer.length} customers`);
+    db.close();
   });
-  db.close();
 };
 
 //export all methods
@@ -68,5 +68,6 @@ module.exports = {
   addCustomer,
   findCustomer,
   removeCustomer,
-  updateCustomer
+  updateCustomer,
+  listCustomer
 };

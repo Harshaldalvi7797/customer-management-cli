@@ -5,7 +5,8 @@ const {
   addCustomer,
   findCustomer,
   removeCustomer,
-  updateCustomer
+  updateCustomer,
+  listCustomer
 } = require("./index");
 
 program.version("1.0.0").description("client management system");
@@ -74,11 +75,18 @@ program
   });
 
 //remove command
-
 program
   .command("remove <_id>")
   .alias("r")
   .description("remove customer")
   .action(_id => removeCustomer(_id));
+
+//list
+
+program
+  .command("list")
+  .alias("l")
+  .description("list all")
+  .action(() => listCustomer());
 
 program.parse(process.argv);
