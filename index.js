@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
-
-//mapp global promise  - get rid of warning
+// Map global promise - get rid of warning
 mongoose.Promise = global.Promise;
-
-//connect to db
-const db = mongoose.connect("mongodb:localhost:27017/customercli", {
-  useMongoClient: true,
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+// Connect to db
+const db = mongoose
+  .connect("mongodb://localhost:27017/customercli", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+  .then(() => console.log("Mongodb connected"))
+  .catch(err => console.log(err));
 
 //Import Model
 const Customer = require("./Models/customer");
