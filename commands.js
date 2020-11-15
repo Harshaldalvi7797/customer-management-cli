@@ -79,8 +79,6 @@ program
   .command("remove <_id>")
   .alias("r")
   .description("remove customer")
-  .action(_id => {
-    removeCustomer(_id);
-  });
+  .action(_id => removeCustomer(_id));
 
 program.parse(process.argv);

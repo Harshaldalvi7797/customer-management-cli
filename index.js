@@ -40,8 +40,8 @@ const findCustomer = name => {
 const updateCustomer = (_id, customer) => {
   Customer.update({ _id }, customer).then(() => {
     console.info("customer updated");
+    db.close();
   });
-  db.close();
 };
 
 //remove customer
@@ -49,8 +49,8 @@ const updateCustomer = (_id, customer) => {
 const removeCustomer = _id => {
   Customer.remove({ _id }).then(() => {
     console.info("customer remove");
+    db.close();
   });
-  db.close();
 };
 
 //list of all customer
