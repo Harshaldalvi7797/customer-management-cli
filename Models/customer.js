@@ -10,5 +10,6 @@ const customerSchema = new mongoose.Schema({
 });
 
 //Define and export
-
 module.exports = mongoose.model("customer", customerSchema);
+
+
